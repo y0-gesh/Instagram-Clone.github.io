@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: #fafafa;
+    --sidebar-color: #ffffff;
+    --primary-color: black;
+    --hover-color: #fafafa;
+    --primary-color-light: #fafafa;
+    --togle-color: #DDD;
+    --text-color: #373737;
+    --border-color: #c9cfd2;
+    --pop-border: #f0f0f0;
+    --line-hr: #efefef;
+    --pop-color: #ffffff;
+    --shadow-color: rgb(227 227 227);
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+}
+
+.dark-theme {
+    --primary-color: #fafafa;
+    --sidebar-color: #000000;
+    --primary-color-light: #121212;
+    --text-color: #fafafa;
+    --hover-color: #121212;
+    --body-color: #121212;
+    --border-color: #232323;
+    --pop-border: #262626;
+    --line-hr: #262626;
+    --pop-color: #262626;
+    --shadow-color: none;
+}
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 245px;
+    border-right: 1px solid var(--border-color);
+    background: var(--sidebar-color);
+}
+
+.sidebar .insta-text .insta-logo {
+    display: none;
+}
+
+.insta-text {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: 'Grand Hotel', cursive;
+    font-size: 30px;
+    padding: 28px;
+    font-weight: 600;
+}
+
+.insta-text a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav .nav-bar {
+    position: relative;
+    padding: 0;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Outfit', sans-serif;
+}
+
+.sidebar li {
+    height: 50px;
+    margin: 6px;
+    padding: 1px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 28px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.sidebar li a:hover {
+    background-color: var(--hover-color);
+}
+
+.sidebar .nav-bar {
+    height: calc(100% - 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar li a:hover .icon {
+    font-size: 31px;
+}
+
+.menu-items {
+    display: none;
+}
+
+.menu2 li a {
+    color: var(--text-color);
+}
+
+@media (min-width: 767px) {
+    .menu-items {
+        display: block;
+        position: absolute;
+        bottom: 10%;
+        left: 2%;
+        width: 245px;
+        height: 287px;
+        background: var(--pop-color);
+        border-radius: 10px;
+        box-shadow: 2px 2px 22px 1px var(--shadow-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: all .4s ease;
+        transition: max-height 0.05s ease-out;
+    }
+
+    .menu-list-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .menu-items li {
+        height: 40px;
+        box-sizing: border-box;
+        margin: 0;
+        border: 1px solid var(--pop-border);
+
+    }
+
+    .menu-items hr {
+        height: 6px;
+        border: none;
+        background-color: var(--line-hr);
+    }
+
+    .menu-items li a {
+        display: inline-grid;
+        margin: 0px 0px;
+        padding: 8px 20px;
+        align-items: center;
+        border-radius: 0;
+        color: var(--primary-color);
+    }
+
+    .menu-items a i {
+        position: relative;
+        top: -24px;
+        justify-self: right;
+        font-size: 30px;
+
+    }
+
+    .menu-items.open-menu {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 1260px) {
+    .sidebar {
+        width: 72px;
+    }
+
+    .sidebar li a {
+        clip-path: circle(44%);
+    }
+
+    .sidebar .insta-text .insta-logo {
+        display: block;
+        margin: 3px 9px;
+        position: fixed;
+        /* left: 2px; */
+        font-size: 32px;
+        transform: translate(-50%);
+        transition: all 0.3s ease;
+    }
+
+    .sidebar .insta-text span {
+        display: none;
+    }
+
+    .sidebar .insta-text a :hover {
+        font-size: 35px;
+    }
+
+    .sidebar .nav-bar {
+        margin-top: 41px;
+    }
+}
+
+/* Responsiveness Status Bar  */
+.home-container {
+    margin-left: 245px;
+}
+
+@media (max-width: 1024px) {
+    .home-container {
+        margin-left: 75px;
+    }
+}
+
+.status-pro {
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    display: flex;
+
+}
+
+/* Stories  */
+.stories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 173px;
+    background-color: var(--body-color);
+}
+
+.horizontal-scroll {
+    width: 464px;
+    height: 120px;
+    background-color: var(--sidebar-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.horizontal-scroll button i {
+    font-size: 27px;
+}
+
+.horizontal-scroll .btn-scroll {
+    background: transparent;
+    color: white;
+    box-shadow: 0 0 10px #999;
+    padding: 6px 8px;
+    border: 0;
+    border-radius: 50%;
+    margin: 0 5px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.story-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    transition: all 0.5s ease-out;
+}
+
+.story-circle {
+    background: linear-gradient(rgb(231, 0, 231), rgb(255, 155, 0));
+    width: 60px;
+    height: 60px;
+    margin: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: rotateZ('45deg');
+}
+
+.story-circle img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--sidebar-color);
+    transform: rotateZ('-45deg');
+}
+.home-profile {
+    display: none;
+}
+
+/* Home Profile  */
+@media (min-width: 1070px) {
+    .home-profile {
+        display: block;
+        position: relative;
+        width: 358px;
+        height: 520px;
+    }
+}
+.profile-container {
+    margin-left: 35px;
+    margin-top: 52px;
+}
+.profile-details {
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.home-profile .profile-details img {
+    width: 56px;
+    margin-right: 17px;
+    clip-path: circle(50%);
+}
+
+.user-id {
+    position: relative;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+    top: -7px;
+}
+.name {
+    position: relative;
+    top: 14px;
+    left: -59px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 300;
+    color: #b2b2b2;
+    font-size: 13px;
+}
+.home-profile .suggestions {
+    margin-top: 17px;
+    margin-bottom: 15px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #a0a0a0;
+}
+
+.home-profile .profile-container .suggestions .see-all {
+    position: absolute;
+    right: 0px;
+    color: var(--text-color);
+    font-size: 11px;
+}
+
+.home-profile .profile-container .follow-more {
+    list-style: none;
+}
+
+.home-profile .profile-container .follow-more li img {
+    width: 35px;
+    margin-right: 13px;
+    clip-path: circle(50%);
+}
+
+.home-profile .profile-container .profile-details .follow {
+    position: absolute;
+    right: 0;
+}
+
+.follow-more .user-id {
+    top: -7px;
+}
+
+.follow-more .name {
+    left: -43px;
+    top: 10px;
+    color: #b2b2b2;
+    font-size: 12px;
+}
+
+.follow-more li {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.home-profile .profile-container .follow-more li .follow {
+    position: absolute;
+    right: 0;
+}
+
+.follow,
+.see-all {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 12px;
+    color: #2ca7f7;
+}
+
+/* skeleton */
+.card {
+    max-width: 466px;
+    position: absolute;
+    left: 0;
+    top: 165px;
+    height: 534px;
+    width: 100%;
+    background: var(--sidebar-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.card .header-card {
+    margin: 12px;
+    display: flex;
+    align-items: center;
+}
+.header-card .card-image {
+    height: 32px;
+    width: 32px;
+    background: #656871;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.header-card .details {
+    margin-left: 15px;
+}
+.details span {
+    display: block;
+    background: #656871;
+    overflow: hidden;
+    position: relative;
+}
+
+.details .name {
+    height: 10px;
+    width: 150px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.details .about {
+    height: 11px;
+    width: 90px;
+    margin-top: 5px;
+}
+
+.description .line {
+    background: #656871;
+    height: 476px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0 0px 5px 5px;
+}
+
+.header-card .card-image::before,
+.details span::before,
+.description .line::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, #656871 0%, #888b94 20%, #656871 40%, #656871 100%);
+    background-repeat: no-repeat;
+    background-size: 450px 476px;
+    animation: shimmer 1s linear infinite;
+}
+.header-card .card-image::before {
+    background-size: 650px 600px;
+}
+.details span::before {
+    animation-delay: 0.2s;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -450px 0;
+    }
+
+    100% {
+        background-position: 450px 0;
+    }
+}

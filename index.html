@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Instagram Clone</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav class="sidebar">
+            <div class="insta-text"><a href="#"><i class='bx bxl-instagram insta-logo'></i><span>Instagram</span></a>
+            </div>
+
+            <div class="nav-bar">
+                <div class="menu">
+                    <ul class="menu-link">
+                        <li class="nav-link">
+                            <a href="#"><i class='bx bx-home-alt icon'></i><span class="text">Home</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bx-search icon'></i><span class="text">Search</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bx-compass icon'></i><span class="text">Explore</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bx-movie-play icon'></i><span class="text">Reels</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bxl-messenger icon'></i></i><span class="text">Messages</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bx-heart icon'></i><span class="text">Notifications</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bx-message-alt-add icon'></i><span class="text">Create</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="material-symbols-outlined icon">person</span><span
+                                    class="text">Profile</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu2">
+                    <li>
+                        <a href="#" class="menu-icon-link" onclick="toggleMenu()"><i
+                                class='bx bx-menu icon'></i>Menu</a>
+                    </li>
+                </div>
+                <div class="menu-items" id="subMenu">
+                    <ul class="menu-list-items">
+                        <li><a href="#"><span>Settings</span><i class='bx bxs-cog'></i></a></li>
+                        <li><a href="#"><span>Saved</span><i class='bx bx-bookmark'></i></a></li>
+                        <li><a href="#" id="click"><span>Switch appearance</span><i class='bx bx-moon'></i></a></li>
+                        <li><a href="#"><span>Your activity</span><i class='bx bx-time-five'></i></a></li>
+                        <li><a href="#"><span>Report a problem</span><i class='bx bx-message-alt-error'></i></a></li>
+                        <hr>
+                        <li><a href="#"><span>Switch account</span></a></li>
+                        <li><a href="#"><span>Log out</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="insta-home">
+
+        <div class="home-container">
+            <div class="status-pro">
+                <!-- Story Start -->
+                <div class="stories">
+                    <div class="horizontal-scroll">
+                        <button class="btn-scroll" id="scroll-left" onclick="scrollHorizontally(1)"><i
+                                class='bx bxs-chevron-left-circle'></i></button>
+                        <button class="btn-scroll" id="scroll-right" onclick="scrollHorizontally(-1)"><i
+                                class='bx bxs-chevron-right-circle'></i></button>
+                        <div class="story-container">
+                            <div class="story-circle"><img src="images/photo_designify.png" alt=""></div>
+                            <div class="story-circle"><img src="images/1.png" alt=""></div>
+                            <div class="story-circle"><img src="images/2.png" alt=""></div>
+                            <div class="story-circle"><img src="images/3.png" alt=""></div>
+                            <div class="story-circle"><img src="images/4.png" alt=""></div>
+                            <div class="story-circle"><img src="images/5.png" alt=""></div>
+                            <div class="story-circle"><img src="images/1.png" alt=""></div>
+                            <div class="story-circle"><img src="images/2.png" alt=""></div>
+                            <div class="story-circle"><img src="images/3.png" alt=""></div>
+                            <div class="story-circle"><img src="images/4.png" alt=""></div>
+                            <div class="story-circle"><img src="images/5.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Story End -->
+                <div class="home-profile">
+                    <div class="profile-container">
+                        <div class="profile-details">
+                            <img src="images/photo_designify.png" alt="y0_gesh_">
+                            <span class="user-id">y0_gesh_</span>
+                            <span class="name">Yogesh Tandan</span>
+                            <a href="#" class="follow">Switch</a>
+                        </div>
+                        <div class="suggestions">Suggestions For You <a href="#" class="see-all"><span>See
+                                    All</span></a></div>
+                        <div class="follow-more">
+                            <li>
+                                <img src="images/1.png" alt="y0_gesh_">
+                                <span class="user-id">su_ho_</span>
+                                <span class="name">New to Instagram</span>
+                                <a href="#" class="follow">Follow</a>
+                            </li>
+                            <li>
+                                <img src="images/2.png" alt="y0_gesh_">
+                                <span class="user-id">kim_se</span>
+                                <span class="name">New to Instagram</span>
+                                <a href="#" class="follow">Follow</a>
+                            </li>
+                            <li>
+                                <img src="images/6.png" alt="y0_gesh_">
+                                <span class="user-id">jen_nie</span>
+                                <span class="name">New to Instagram</span>
+                                <a href="#" class="follow">Follow</a>
+                            </li>
+                            <li>
+                                <img src="images/7.png" alt="y0_gesh_">
+                                <span class="user-id">la_lisa_</span>
+                                <span class="name">New to Instagram</span>
+                                <a href="#" class="follow">Follow</a>
+                            </li>
+                            <li>
+                                <img src="images/5.png" alt="y0_gesh_">
+                                <span class="user-id">arjun_s</span>
+                                <span class="name">New to Instagram</span>
+                                <a href="#" class="follow">Follow</a>
+                            </li>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Skeleton -->
+                <div class="card">
+                    <div class="header-card">
+                        <div class="card-image"></div>
+                        <div class="details">
+                            <span class="name"></span>
+                            <span class="about"></span>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="line line-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
